@@ -1,0 +1,11 @@
+.venv/
+node_modules/
+.project-codex-home/
+.project-llmwiki-home/
+.project-gitnexus-home/
+.project-graphify-home/
+.env.local
+logs/
+tmp/
+*.pyc
+__pycache__/

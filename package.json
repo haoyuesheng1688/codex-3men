@@ -1,0 +1,21 @@
+{
+  "name": "codex-3men",
+  "version": "1.0.0",
+  "description": "This project is a portable, isolated learning stack for long-running Codex study of Siemens industrial automation topics.",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "small-case": "powershell -ExecutionPolicy Bypass -File scripts/verify-small-case.ps1",
+    "learn": "powershell -ExecutionPolicy Bypass -File scripts/run-learning-cycle.ps1",
+    "gitnexus": "gitnexus"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gitnexus": "^1.6.5"
+  }
+}

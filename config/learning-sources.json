@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "sourcePolicy": {
+    "priority": [
+      "official",
+      "vendor_support",
+      "community_forum",
+      "video",
+      "academic"
+    ],
+    "rule": "Official Siemens documentation is authoritative. Community and video sources are leads until confirmed by official documentation or a reproducible local case."
+  },
+  "sources": [
+    {
+      "id": "siemens-tia-openness-v21",
+      "type": "official",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-openness-api-for-automation-of-engineering-workflows",
+      "topics": ["TIA_OPN_V21", "CLI_EXPORT_IMPORT"],
+      "checkedOn": "2026-05-26"
+    },
+    {
+      "id": "siemens-wincc-unified-js-tags-createtagset-v20",
+      "type": "official",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v20/wincc-unified-javascript-object-model-rt-unified/hmiruntime-rt-unified/tags-rt-unified/tags.createtagset-rt-unified",
+      "topics": ["WINCC_UNIFIED_JS_TAGSET"],
+      "checkedOn": "2026-05-26"
+    },
+    {
+      "id": "siemens-wincc-v81-programming",
+      "type": "vendor_support",
+      "url": "https://support.industry.siemens.com/cs/attachments/109990013/WinCC_Programming_en-US_en-US.pdf",
+      "topics": ["WINCC_CLASSIC_VBS_HMIRUNTIME"],
+      "checkedOn": "2026-05-26"
+    }
+  ]
+}

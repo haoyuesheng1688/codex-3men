@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "keywords": [
+    {
+      "id": "TIA_OPN_V21",
+      "label": "TIA Portal Openness V21",
+      "domain": "tia-openness",
+      "purpose": "Track current official Openness API, export/import, and CLI automation behavior."
+    },
+    {
+      "id": "SCL_CASE_OF",
+      "label": "SCL CASE..OF State Machine",
+      "domain": "scl",
+      "purpose": "Drive safe sequencer, valve, fan, motor, and batch-control SCL examples."
+    },
+    {
+      "id": "SCL_OPTIMIZED_ACCESS",
+      "label": "SCL Optimized Block Access",
+      "domain": "scl",
+      "purpose": "Prevent absolute DB addressing and keep blocks compatible with optimized access."
+    },
+    {
+      "id": "WINCC_CLASSIC_VBS_HMIRUNTIME",
+      "label": "WinCC Classic VBS HMIRuntime",
+      "domain": "wincc-classic-vbs",
+      "purpose": "Drive VBS runtime tag, screen, file, ADO, and OLE scripting examples."
+    },
+    {
+      "id": "WINCC_UNIFIED_JS_TAGSET",
+      "label": "WinCC Unified JS TagSet",
+      "domain": "wincc-unified-js",
+      "purpose": "Drive batch tag read/write and dynamic runtime JavaScript examples."
+    },
+    {
+      "id": "CLI_EXPORT_IMPORT",
+      "label": "CLI Export Import",
+      "domain": "cli-control",
+      "purpose": "Track repeatable command-line or bridge workflows for source export/import."
+    },
+    {
+      "id": "NOTION_STAGE_REPORT",
+      "label": "Notion Stage Report",
+      "domain": "reporting",
+      "purpose": "Drive structured phase reports into Notion-ready Markdown."
+    }
+  ]
+}

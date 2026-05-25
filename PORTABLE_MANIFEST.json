@@ -1,0 +1,24 @@
+{
+  "project": "Codex-3men",
+  "root": "D:\\skills\\codex\\Codex-3men",
+  "isolation": {
+    "codexHome": ".project-codex-home",
+    "llmwikiHome": ".project-llmwiki-home",
+    "gitnexusHome": ".project-gitnexus-home",
+    "graphifyHome": ".project-graphify-home",
+    "pythonVenv": ".venv",
+    "secrets": ".env.local"
+  },
+  "entrypoints": {
+    "enterContext": "scripts/enter-project-context.ps1",
+    "setupVenv": "scripts/setup-venv.ps1",
+    "smallCase": "scripts/verify-small-case.ps1",
+    "learningCycle": "scripts/run-learning-cycle.ps1"
+  },
+  "knowledgeStores": {
+    "llmwiki": "knowledge/llmwiki",
+    "gitnexus": "knowledge/gitnexus",
+    "graphify": "knowledge/graphify/graph.jsonl",
+    "notionReports": "reports/notion"
+  }
+}

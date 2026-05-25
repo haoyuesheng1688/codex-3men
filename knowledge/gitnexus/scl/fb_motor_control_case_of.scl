@@ -1,0 +1,50 @@
+﻿FUNCTION_BLOCK "FB_MotorControl_CaseOf"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT
+      StartCmd : Bool;
+      StopCmd : Bool;
+      FaultReset : Bool;
+      FeedbackRunning : Bool;
+   END_VAR
+   VAR_OUTPUT
+      MotorRun : Bool;
+      Fault : Bool;
+      State : Int;
+   END_VAR
+   VAR
+      Step : Int := 0;
+   END_VAR
+
+BEGIN
+   // Keywords: SCL_CASE_OF, SCL_OPTIMIZED_ACCESS
+   CASE #Step OF
+      0:
+         #MotorRun := FALSE;
+         #Fault := FALSE;
+         #State := 0;
+         IF #StartCmd THEN
+            #Step := 10;
+         END_IF;
+      10:
+         #MotorRun := TRUE;
+         #State := 10;
+         IF #StopCmd THEN
+            #Step := 0;
+         ELSIF NOT #FeedbackRunning THEN
+            #Step := 900;
+         END_IF;
+      900:
+         #MotorRun := FALSE;
+         #Fault := TRUE;
+         #State := 900;
+         IF #FaultReset THEN
+            #Step := 0;
+         END_IF;
+      ELSE
+         #MotorRun := FALSE;
+         #Fault := TRUE;
+         #State := 999;
+         #Step := 900;
+   END_CASE;
+END_FUNCTION_BLOCK
