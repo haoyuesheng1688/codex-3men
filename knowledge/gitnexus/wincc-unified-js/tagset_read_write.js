@@ -1,4 +1,4 @@
-﻿// Keywords: WINCC_UNIFIED_JS_TAGSET
+// Keywords: WINCC_UNIFIED_JS_TAGSET
 export function ToggleMotorTags() {
   try {
     const tagSet = Tags.CreateTagSet(["Motor_StartCmd", "Motor_StopCmd"]);
