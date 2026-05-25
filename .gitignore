@@ -5,6 +5,9 @@ node_modules/
 .project-gitnexus-home/
 .project-graphify-home/
 .env.local
+.gitnexus/
+graphify-out/
+**/graphify-out/
 logs/
 tmp/
 *.pyc
