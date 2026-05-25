@@ -1,4 +1,4 @@
-' Keywords: WINCC_CLASSIC_VBS_HMIRUNTIME
+﻿' Keywords: WINCC_CLASSIC_VBS_HMIRUNTIME
 Option Explicit
 On Error Resume Next
 

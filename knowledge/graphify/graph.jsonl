@@ -1,4 +1,4 @@
-{"schema":"codex-3men.graphify.v1","created":"2026-05-26","note":"Entity-relation triples for project-local automation knowledge."}
+﻿{"schema":"codex-3men.graphify.v1","created":"2026-05-26","note":"Entity-relation triples for project-local automation knowledge."}
 {"subject":"TIA Portal Openness V21","object":"SCL blocks","source":"https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-openness-api-for-automation-of-engineering-workflows","predicate":"exports_imports","keywords":["TIA_OPN_V21","CLI_EXPORT_IMPORT"]}
 {"subject":"SCL CASE OF","object":"bounded state machine","source":"knowledge/gitnexus/scl/fb_motor_control_case_of.scl","predicate":"implements","keywords":["SCL_CASE_OF"]}
 {"subject":"WinCC Classic VBS","object":"HMIRuntime.Tags","source":"https://support.industry.siemens.com/cs/attachments/109990013/WinCC_Programming_en-US_en-US.pdf","predicate":"uses","keywords":["WINCC_CLASSIC_VBS_HMIRUNTIME"]}
