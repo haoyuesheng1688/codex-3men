@@ -5,6 +5,7 @@ node_modules/
 .project-gitnexus-home/
 .project-graphify-home/
 .env.local
+.env
 .gitnexus/
 graphify-out/
 **/graphify-out/

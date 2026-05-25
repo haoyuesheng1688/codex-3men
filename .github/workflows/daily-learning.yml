@@ -1,0 +1,71 @@
+name: Daily Industrial Learning
+
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  learn:
+    runs-on: windows-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install Python dependencies
+        shell: pwsh
+        run: |
+          python -m venv .venv
+          .\.venv\Scripts\python.exe -m pip install --upgrade pip
+          .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Run learning cycle
+        shell: pwsh
+        run: |
+          . .\scripts\enter-project-context.ps1
+          .\scripts\run-learning-cycle.ps1 -Stage "stage-${{ github.run_number }}-cloud-learning"
+
+      - name: Publish Notion report when configured
+        shell: pwsh
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PARENT_PAGE_ID: ${{ secrets.NOTION_PARENT_PAGE_ID }}
+        run: |
+          if (-not $env:NOTION_TOKEN -or -not $env:NOTION_PARENT_PAGE_ID) {
+            Write-Host "NOTION_TOKEN or NOTION_PARENT_PAGE_ID is not configured. Skipping Notion publish."
+            exit 0
+          }
+          $report = Get-ChildItem -LiteralPath .\reports\notion -Filter "stage-${{ github.run_number }}-cloud-learning.md" | Select-Object -First 1
+          .\scripts\publish-notion-report.ps1 -ReportPath $report.FullName -Title "$(Get-Date -Format 'yyyy-MM-dd') Codex-3men cloud learning report"
+
+      - name: Commit generated learning artifacts
+        shell: pwsh
+        run: |
+          git config user.name "codex-3men-bot"
+          git config user.email "codex-3men-bot@users.noreply.github.com"
+          git add knowledge reports config
+          if (-not (git diff --cached --quiet)) {
+            git commit -m "chore: daily industrial learning ${{ github.run_number }}"
+            git push
+          } else {
+            Write-Host "No learning changes to commit."
+          }

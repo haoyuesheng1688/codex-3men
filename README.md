@@ -36,6 +36,19 @@ For a normal learning pass:
 .\scripts\run-learning-cycle.ps1
 ```
 
+## Hybrid Cloud Local Mode
+
+The GitHub repository can continue unattended learning while this computer is off. See [docs/hybrid-cloud-local-runbook.md](docs/hybrid-cloud-local-runbook.md).
+
+Cloud mode runs through `.github/workflows/daily-learning.yml`.
+
+Local real-software validation is manual. When the user says `请同步验证`, run:
+
+```powershell
+. .\scripts\enter-project-context.ps1
+.\scripts\sync-verify-local.ps1
+```
+
 ## Isolation Contract
 
 The project owns its own runtime homes:

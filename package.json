@@ -10,6 +10,7 @@
   "scripts": {
     "small-case": "powershell -ExecutionPolicy Bypass -File scripts/verify-small-case.ps1",
     "learn": "powershell -ExecutionPolicy Bypass -File scripts/run-learning-cycle.ps1",
+    "sync-verify": "powershell -ExecutionPolicy Bypass -File scripts/sync-verify-local.ps1",
     "gitnexus": "gitnexus"
   },
   "keywords": [],

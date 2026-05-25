@@ -13,7 +13,10 @@
     "enterContext": "scripts/enter-project-context.ps1",
     "setupVenv": "scripts/setup-venv.ps1",
     "smallCase": "scripts/verify-small-case.ps1",
-    "learningCycle": "scripts/run-learning-cycle.ps1"
+    "learningCycle": "scripts/run-learning-cycle.ps1",
+    "cloudWorkflow": ".github/workflows/daily-learning.yml",
+    "localSyncVerify": "scripts/sync-verify-local.ps1",
+    "notionPublisher": "scripts/publish-notion-report.ps1"
   },
   "knowledgeStores": {
     "llmwiki": "knowledge/llmwiki",
