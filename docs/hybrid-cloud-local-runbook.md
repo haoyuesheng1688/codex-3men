@@ -64,10 +64,12 @@ If GitHub repository secrets are configured, the workflow also publishes the rep
 - `NOTION_TOKEN`
 - `NOTION_PARENT_PAGE_ID`
 
-Use the `news` page ID when reports should land under the existing Notion `news` page:
+All Codex-3men Notion assets must land under the dedicated `codex-3men` Notion page. That page is already nested under the user's existing `news` page, so do not point automated publishing directly at `news`.
+
+Use this `codex-3men` page ID for `NOTION_PARENT_PAGE_ID`:
 
 ```text
-349c8717-dee0-80b7-862b-c8d662f9a37a
+36bc8717-dee0-81ef-9318-f214f49117b3
 ```
 
 ## Local Responsibilities
