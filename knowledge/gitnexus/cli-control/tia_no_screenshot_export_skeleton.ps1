@@ -1,4 +1,4 @@
-﻿# Keywords: TIA_CLI_NO_SCREENSHOT, TIA_IO_AUTOMATION
+# Keywords: TIA_CLI_NO_SCREENSHOT, TIA_IO_AUTOMATION
 # Purpose: no-screenshot automation skeleton. Local paths must be verified on the engineering workstation.
 
 param(
