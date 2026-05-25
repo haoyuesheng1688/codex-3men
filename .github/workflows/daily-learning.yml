@@ -36,7 +36,7 @@ jobs:
           .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
       - name: Install Node dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run learning cycle
         shell: pwsh
