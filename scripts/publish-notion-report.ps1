@@ -26,7 +26,7 @@ $content = Get-Content -LiteralPath $ReportPath -Raw
 
 function New-RichText {
   param([string]$Text)
-  return @(
+  return ,@(
     @{
       type = "text"
       text = @{ content = $Text }
