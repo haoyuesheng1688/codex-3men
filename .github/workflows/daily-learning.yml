@@ -43,6 +43,8 @@ jobs:
 
       - name: Run learning cycle
         shell: pwsh
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           . .\scripts\enter-project-context.ps1
           Write-Host "Learning depth: deep mode, target duration 180 minutes, 2-3 primary topics, 8-12 high-value sources, 2-3 code assets, 10-20 graph relationships, 1 detailed Notion-ready report."
