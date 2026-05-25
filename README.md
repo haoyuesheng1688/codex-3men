@@ -40,7 +40,9 @@ For a normal learning pass:
 
 The GitHub repository can continue unattended learning while this computer is off. See [docs/hybrid-cloud-local-runbook.md](docs/hybrid-cloud-local-runbook.md).
 
-Cloud mode runs through `.github/workflows/daily-learning.yml`.
+Cloud mode runs through `.github/workflows/daily-learning.yml`. It runs daily at 01:30 China time.
+
+Each cloud run is bounded: 1 primary keyword topic, up to 3 official/vendor sources, 1 small code asset when useful, 3 to 5 graph relationships, and 1 Notion-ready report. Findings that require real TIA Portal, WinCC, or Openness proof are marked for local validation.
 
 Local real-software validation is manual. When the user says `请同步验证`, run:
 

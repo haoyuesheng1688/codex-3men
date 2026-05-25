@@ -2,7 +2,8 @@ name: Daily Industrial Learning
 
 on:
   schedule:
-    - cron: "30 0 * * *"
+    # 01:30 China Standard Time (UTC+8) = 17:30 UTC.
+    - cron: "30 17 * * *"
   workflow_dispatch:
 
 permissions:
@@ -42,6 +43,7 @@ jobs:
         shell: pwsh
         run: |
           . .\scripts\enter-project-context.ps1
+          Write-Host "Learning depth: 1 primary topic, up to 3 official/vendor sources, 1 small code asset, 3-5 graph relationships, 1 Notion-ready report."
           .\scripts\run-learning-cycle.ps1 -Stage "stage-${{ github.run_number }}-cloud-learning"
 
       - name: Publish Notion report when configured

@@ -23,7 +23,26 @@ GitHub Actions workflow:
 .github/workflows/daily-learning.yml
 ```
 
-It runs daily at 08:30 China time because the cron value is `30 0 * * *` UTC.
+It runs daily at 01:30 China time because the cron value is `30 17 * * *` UTC.
+
+## Learning Depth Per Run
+
+Each unattended cloud run is intentionally bounded. The goal is steady accumulation, not uncontrolled scraping.
+
+Default depth:
+
+- Focus on 1 primary topic per run, selected from `config/keywords.json`.
+- Check up to 3 official or vendor sources first.
+- Use community forums, YouTube, Bilibili, and academic/forum material only as leads unless confirmed by official documentation or a reproducible local case.
+- Produce or update 1 small code asset where useful: `.scl`, `.vbs`, `.js`, `.ps1`, or `.cs`.
+- Add 3 to 5 Graphify relationships.
+- Update the relevant LLM Wiki page.
+- Generate 1 Notion-ready report.
+
+Escalation rule:
+
+- If a finding affects real TIA Portal, WinCC Classic, WinCC Unified, Openness import/export, compile behavior, runtime tag behavior, or production safety, the cloud run must mark it as `needs-local-validation`.
+- It is not considered verified until the user says `请同步验证` and the local workstation produces a validation report under `reports/local-validation/`.
 
 Cloud outputs:
 
