@@ -27,17 +27,25 @@ It runs daily at 01:30 China time because the cron value is `30 17 * * *` UTC.
 
 ## Learning Depth Per Run
 
-Each unattended cloud run is intentionally bounded. The goal is steady accumulation, not uncontrolled scraping.
+Each unattended cloud run is a deep learning pass.
 
 Default depth:
 
-- Focus on 1 primary topic per run, selected from `config/keywords.json`.
-- Check up to 3 official or vendor sources first.
-- Use community forums, YouTube, Bilibili, and academic/forum material only as leads unless confirmed by official documentation or a reproducible local case.
-- Produce or update 1 small code asset where useful: `.scl`, `.vbs`, `.js`, `.ps1`, or `.cs`.
-- Add 3 to 5 Graphify relationships.
-- Update the relevant LLM Wiki page.
-- Generate 1 Notion-ready report.
+- Target duration: 180 minutes.
+- Workflow timeout: 210 minutes, leaving margin for setup, Notion publish, and Git commit.
+- Focus on 2 to 3 primary topics per run, selected from `config/keywords.json`.
+- Check 5 to 8 official or vendor sources first.
+- Review 3 to 6 community, YouTube, Bilibili, academic, or forum leads.
+- Produce or update 2 to 3 code assets where useful: `.scl`, `.vbs`, `.js`, `.ps1`, or `.cs`.
+- Add 10 to 20 Graphify relationships.
+- Update relevant LLM Wiki pages with finer sub-sections, source URLs, application boundaries, and unresolved questions.
+- Generate 1 detailed Notion-ready report.
+
+The machine-readable depth profile is:
+
+```text
+config/learning-depth.json
+```
 
 Escalation rule:
 

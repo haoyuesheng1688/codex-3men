@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "mode": "deep",
+  "targetDurationMinutes": 180,
+  "workflowTimeoutMinutes": 210,
+  "schedule": {
+    "chinaTime": "01:30",
+    "utcCron": "30 17 * * *"
+  },
+  "perRunDepth": {
+    "primaryTopics": {
+      "min": 2,
+      "max": 3
+    },
+    "officialOrVendorSources": {
+      "min": 5,
+      "max": 8
+    },
+    "communityOrVideoLeads": {
+      "min": 3,
+      "max": 6
+    },
+    "codeAssets": {
+      "min": 2,
+      "max": 3,
+      "extensions": [".scl", ".vbs", ".js", ".ps1", ".cs"]
+    },
+    "graphRelationships": {
+      "min": 10,
+      "max": 20
+    },
+    "notionReports": 1
+  },
+  "qualityGate": {
+    "officialFirst": true,
+    "markUnverifiedRuntimeClaims": "needs-local-validation",
+    "requireLocalValidationFor": [
+      "TIA Portal import/export behavior",
+      "Openness compile behavior",
+      "WinCC Classic runtime tag behavior",
+      "WinCC Unified runtime JavaScript behavior",
+      "production safety claims"
+    ]
+  }
+}

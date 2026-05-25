@@ -42,7 +42,7 @@ The GitHub repository can continue unattended learning while this computer is of
 
 Cloud mode runs through `.github/workflows/daily-learning.yml`. It runs daily at 01:30 China time.
 
-Each cloud run is bounded: 1 primary keyword topic, up to 3 official/vendor sources, 1 small code asset when useful, 3 to 5 graph relationships, and 1 Notion-ready report. Findings that require real TIA Portal, WinCC, or Openness proof are marked for local validation.
+Each cloud run is a deep pass: target duration 180 minutes, 2 to 3 primary keyword topics, 5 to 8 official/vendor sources, 3 to 6 community or video leads, 2 to 3 code assets when useful, 10 to 20 graph relationships, and 1 detailed Notion-ready report. Findings that require real TIA Portal, WinCC, or Openness proof are marked for local validation.
 
 Local real-software validation is manual. When the user says `请同步验证`, run:
 
