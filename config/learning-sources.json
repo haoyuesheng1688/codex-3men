@@ -31,6 +31,34 @@
       "url": "https://support.industry.siemens.com/cs/attachments/109990013/WinCC_Programming_en-US_en-US.pdf",
       "topics": ["WINCC_CLASSIC_VBS_HMIRUNTIME"],
       "checkedOn": "2026-05-26"
+    },
+    {
+      "id": "siemens-tia-v21-new-cpu-functions",
+      "type": "official",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/programming-recommendations-s7-1200-s7-1500/the-new-s7-1200/1500-cpu-functions-and-programming-recommendations-at-a-glance-s7-1200-s7-1500",
+      "topics": ["TIA_V21_NEW_CPU", "TIA_V21_NEW_SYNTAX", "SCL_OPTIMIZED_ACCESS"],
+      "checkedOn": "2026-05-26"
+    },
+    {
+      "id": "siemens-tia-v21-vci-export-formats",
+      "type": "official",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/using-tia-portal-version-control-interface/settings-for-the-version-control-interface/setting-the-export-format/overview-of-export-formats",
+      "topics": ["TIA_CLI_NO_SCREENSHOT", "TIA_IO_AUTOMATION"],
+      "checkedOn": "2026-05-26"
+    },
+    {
+      "id": "siemens-tia-v21-hardware-publication-cli",
+      "type": "official",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/hardware-publication-tool/exporting-attributes-via-command-line-commands",
+      "topics": ["TIA_CLI_NO_SCREENSHOT", "TIA_IO_AUTOMATION"],
+      "checkedOn": "2026-05-26"
+    },
+    {
+      "id": "siemens-s7-200-smart-v3-system-manual",
+      "type": "vendor_support",
+      "url": "https://support.industry.siemens.com/cs/attachments/109978364/S7-200_SMART_V3_system_manual_en-HS.pdf",
+      "topics": ["S7200SMART_V3_V2_DIFF", "S7200SMART_FB_USAGE"],
+      "checkedOn": "2026-05-26"
     }
   ]
 }

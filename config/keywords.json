@@ -42,6 +42,42 @@
       "label": "Notion Stage Report",
       "domain": "reporting",
       "purpose": "Drive structured phase reports into Notion-ready Markdown."
+    },
+    {
+      "id": "TIA_V21_NEW_CPU",
+      "label": "TIA V21 New CPU Functions",
+      "domain": "tia-v21-current",
+      "purpose": "Track new S7-1200/S7-1500/S7-1200 G2 CPU behavior, firmware constraints, and programming recommendations."
+    },
+    {
+      "id": "TIA_V21_NEW_SYNTAX",
+      "label": "TIA V21 SCL Syntax and Data Types",
+      "domain": "scl",
+      "purpose": "Track new or recommended SCL syntax, data types, symbolic access, and optimized block access rules."
+    },
+    {
+      "id": "TIA_CLI_NO_SCREENSHOT",
+      "label": "TIA CLI No Screenshot Automation",
+      "domain": "cli-control",
+      "purpose": "Drive file/API based TIA automation through Openness, VCI, SIMATIC SD, XML, YAML, AML, and command-line tools instead of screenshots."
+    },
+    {
+      "id": "TIA_IO_AUTOMATION",
+      "label": "TIA Automated Input Output",
+      "domain": "cli-control",
+      "purpose": "Define structured input/output contracts for generated engineering data, import/export artifacts, logs, and validation reports."
+    },
+    {
+      "id": "S7200SMART_V3_V2_DIFF",
+      "label": "S7-200 SMART V3 V2 Differences",
+      "domain": "s7-200-smart",
+      "purpose": "Deeply compare V3 and V2 syntax, FB usage, instruction behavior, and migration risks."
+    },
+    {
+      "id": "S7200SMART_FB_USAGE",
+      "label": "S7-200 SMART FB Usage",
+      "domain": "s7-200-smart",
+      "purpose": "Track function block calling, instance data, local/static data, and differences from subroutine use."
     }
   ]
 }

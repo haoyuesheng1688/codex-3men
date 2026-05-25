@@ -6,6 +6,9 @@ This project is a portable, isolated learning stack for long-running Codex study
 
 Primary topics:
 
+- Latest TIA Portal CPUs, firmware-dependent behavior, SCL syntax, and official programming recommendations.
+- No-screenshot TIA automation through Openness, VCI, SIMATIC SD, command-line tools, and structured file import/export.
+- S7-200 SMART V3 versus V2 differences, especially FB block usage and syntax/instruction migration.
 - TIA Portal Openness V21 and CLI automation.
 - SCL industrial code patterns for S7-1200/S7-1500.
 - WinCC Classic VBS for V7/V8 runtime scripting.

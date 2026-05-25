@@ -17,10 +17,13 @@ $wikiDirs = @(
   "knowledge\llmwiki\scl",
   "knowledge\llmwiki\wincc-classic-vbs",
   "knowledge\llmwiki\wincc-unified-js",
+  "knowledge\llmwiki\tia-v21-current",
+  "knowledge\llmwiki\s7-200-smart",
   "knowledge\llmwiki\cli-control",
   "knowledge\gitnexus\scl",
   "knowledge\gitnexus\wincc-classic-vbs",
   "knowledge\gitnexus\wincc-unified-js",
+  "knowledge\gitnexus\s7-200-smart",
   "knowledge\gitnexus\cli-control",
   "reports\notion"
 )
@@ -95,6 +98,69 @@ Official Siemens `Tags.CreateTagSet()` documentation: $($sources.sources[1].url)
 WinCC Unified examples should prefer `Tags.CreateTagSet()` for grouped tag read/write work. Use modern JavaScript style with `let` and `const`, explicit `try ... catch`, and `HMIRuntime.Trace()` for diagnostics.
 "@
 Set-Content -LiteralPath (Join-Path $env:CODEX_3MEN_ROOT "knowledge\llmwiki\wincc-unified-js\tagset-baseline.md") -Value $jsNote -Encoding UTF8
+
+$tiaV21Priority = @"
+# TIA V21 New CPU, Syntax, and No-Screenshot Automation Priority
+
+Updated: $timestamp
+Keywords: `TIA_V21_NEW_CPU`, `TIA_V21_NEW_SYNTAX`, `TIA_CLI_NO_SCREENSHOT`, `TIA_IO_AUTOMATION`
+
+## Official Source Baseline
+
+- New S7-1200/1500 CPU functions and programming recommendations:
+  https://docs.tia.siemens.cloud/r/en-us/v21/programming-recommendations-s7-1200-s7-1500/the-new-s7-1200/1500-cpu-functions-and-programming-recommendations-at-a-glance-s7-1200-s7-1500
+- Openness export/import:
+  https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-openness-api-for-automation-of-engineering-workflows/export/import
+- Version Control Interface export formats:
+  https://docs.tia.siemens.cloud/r/en-us/v21/using-tia-portal-version-control-interface/settings-for-the-version-control-interface/setting-the-export-format/overview-of-export-formats
+- Hardware Publication Tool command-line export:
+  https://docs.tia.siemens.cloud/r/en-us/v21/hardware-publication-tool/exporting-attributes-via-command-line-commands
+
+## Current Learning Focus
+
+Prioritize new CPU families and firmware-dependent behavior, especially S7-1200 G2, S7-1500, S7-1500R/H, and newer firmware rules. Extract practical syntax and programming differences: universal symbolic addressing, optimized block access, larger/newer data types, OPC UA method instruction versions, and migration traps from older absolute-address patterns.
+
+For TIA automation, prefer structured file/API workflows over screenshots:
+
+- Openness export/import for blocks, UDTs, tag tables, HMI data, project texts, and XML-based engineering data.
+- VCI and SIMATIC SD for file-based versioning of blocks and Unified scripts.
+- Hardware Publication Tool command-line export for hardware attributes.
+- Generated artifacts should be inspectable files: `.scl`, `.xml`, `.aml`, `.js`, `.yml`, `.log`, `.json`.
+
+## Validation Boundary
+
+Any claim about actual TIA compile result, CPU catalog behavior, import success, or runtime behavior must be marked ``needs-local-validation`` until the local workstation verifies it through TIA Portal / Openness.
+"@
+Set-Content -LiteralPath (Join-Path $env:CODEX_3MEN_ROOT "knowledge\llmwiki\tia-v21-current\new-cpu-syntax-cli-priority.md") -Value $tiaV21Priority -Encoding UTF8
+
+$smartPriority = @"
+# S7-200 SMART V3 versus V2 Deep-Diff Priority
+
+Updated: $timestamp
+Keywords: `S7200SMART_V3_V2_DIFF`, `S7200SMART_FB_USAGE`
+
+## Official Source Baseline
+
+S7-200 SMART V3 System Manual:
+https://support.industry.siemens.com/cs/attachments/109978364/S7-200_SMART_V3_system_manual_en-HS.pdf
+
+## Current Learning Focus
+
+Build a V3/V2 migration matrix. Prioritize FB block behavior, FB instance data, static local data, parameter passing, subroutine versus function block use, and syntax or instruction changes that can break migrated V2 projects.
+
+The learning loop must extract:
+
+- How V3 defines and calls FBs.
+- How an FB instance stores block parameters and static local data.
+- Whether V2 projects require structural edits before V3 import or compile.
+- Which syntax differences affect reusable industrial blocks.
+- Which behaviors must be verified in STEP 7-Micro/WIN SMART locally.
+
+## Validation Boundary
+
+Any V3/V2 compile, import, download, or online behavior must be marked ``needs-local-validation`` until checked on the local Windows workstation.
+"@
+Set-Content -LiteralPath (Join-Path $env:CODEX_3MEN_ROOT "knowledge\llmwiki\s7-200-smart\v3-v2-fb-diff-priority.md") -Value $smartPriority -Encoding UTF8
 
 $sclCode = @'
 FUNCTION_BLOCK "FB_MotorControl_CaseOf"
@@ -198,6 +264,51 @@ export function ToggleMotorTags() {
 '@
 Set-Content -LiteralPath (Join-Path $env:CODEX_3MEN_ROOT "knowledge\gitnexus\wincc-unified-js\tagset_read_write.js") -Value $jsCode -Encoding UTF8
 
+$tiaCliCode = @'
+# Keywords: TIA_CLI_NO_SCREENSHOT, TIA_IO_AUTOMATION
+# Purpose: no-screenshot automation skeleton. Local paths must be verified on the engineering workstation.
+
+param(
+  [Parameter(Mandatory = $true)]
+  [string]$TiaInstallBin,
+
+  [Parameter(Mandatory = $true)]
+  [string]$ProjectPath,
+
+  [Parameter(Mandatory = $true)]
+  [string]$OutputDir
+)
+
+$ErrorActionPreference = "Stop"
+
+$publicationTool = Join-Path $TiaInstallBin "Siemens.Automation.Cax.PublicationTool.Mdd.Console.exe"
+if (-not (Test-Path -LiteralPath $publicationTool)) {
+  throw "Hardware Publication Tool console executable not found: $publicationTool"
+}
+
+if (-not (Test-Path -LiteralPath $OutputDir)) {
+  New-Item -ItemType Directory -Path $OutputDir | Out-Null
+}
+
+# Exact parameters are version- and installation-dependent.
+# Keep this as a local-validation target before production use.
+& $publicationTool /help | Tee-Object -FilePath (Join-Path $OutputDir "hardware-publication-tool-help.log")
+'@
+Set-Content -LiteralPath (Join-Path $env:CODEX_3MEN_ROOT "knowledge\gitnexus\cli-control\tia_no_screenshot_export_skeleton.ps1") -Value $tiaCliCode -Encoding UTF8
+
+$smartFbNote = @'
+// Keywords: S7200SMART_V3_V2_DIFF, S7200SMART_FB_USAGE
+// Purpose: learning placeholder for S7-200 SMART V3/V2 FB usage.
+// This is not a verified importable source file. Treat as needs-local-validation.
+
+// Study targets:
+// 1. Compare V3 FB instance data with V2 project structure.
+// 2. Record parameter passing rules and static local data behavior.
+// 3. Verify compile/import behavior in STEP 7-Micro/WIN SMART.
+// 4. Convert confirmed patterns into real code assets only after local validation.
+'@
+Set-Content -LiteralPath (Join-Path $env:CODEX_3MEN_ROOT "knowledge\gitnexus\s7-200-smart\v3-v2-fb-study-notes.scl") -Value $smartFbNote -Encoding UTF8
+
 $graphPath = Join-Path $env:CODEX_3MEN_ROOT "knowledge\graphify\graph.jsonl"
 if (Test-Path -LiteralPath $graphPath) {
   $seenGraphLines = @{}
@@ -229,7 +340,11 @@ $triples = @(
   @{ subject = "TIA Portal Openness V21"; predicate = "exports_imports"; object = "SCL blocks"; keywords = @("TIA_OPN_V21", "CLI_EXPORT_IMPORT"); source = $sources.sources[0].url },
   @{ subject = "SCL CASE OF"; predicate = "implements"; object = "bounded state machine"; keywords = @("SCL_CASE_OF"); source = "knowledge/gitnexus/scl/fb_motor_control_case_of.scl" },
   @{ subject = "WinCC Classic VBS"; predicate = "uses"; object = "HMIRuntime.Tags"; keywords = @("WINCC_CLASSIC_VBS_HMIRUNTIME"); source = $sources.sources[2].url },
-  @{ subject = "WinCC Unified JavaScript"; predicate = "uses"; object = "Tags.CreateTagSet"; keywords = @("WINCC_UNIFIED_JS_TAGSET"); source = $sources.sources[1].url }
+  @{ subject = "WinCC Unified JavaScript"; predicate = "uses"; object = "Tags.CreateTagSet"; keywords = @("WINCC_UNIFIED_JS_TAGSET"); source = $sources.sources[1].url },
+  @{ subject = "TIA Portal V21"; predicate = "prioritizes_learning"; object = "new CPU functions and SCL syntax"; keywords = @("TIA_V21_NEW_CPU", "TIA_V21_NEW_SYNTAX"); source = "config/learning-priorities.json" },
+  @{ subject = "TIA automation"; predicate = "avoids"; object = "screenshot-only workflows"; keywords = @("TIA_CLI_NO_SCREENSHOT"); source = "knowledge/gitnexus/cli-control/tia_no_screenshot_export_skeleton.ps1" },
+  @{ subject = "S7-200 SMART V3"; predicate = "requires_deep_diff_against"; object = "S7-200 SMART V2"; keywords = @("S7200SMART_V3_V2_DIFF"); source = "config/learning-priorities.json" },
+  @{ subject = "S7-200 SMART FB"; predicate = "needs_local_validation_for"; object = "instance data and syntax differences"; keywords = @("S7200SMART_FB_USAGE"); source = "knowledge/llmwiki/s7-200-smart/v3-v2-fb-diff-priority.md" }
 )
 foreach ($triple in $triples) {
   $key = "$($triple.subject)|$($triple.predicate)|$($triple.object)"

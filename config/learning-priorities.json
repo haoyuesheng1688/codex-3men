@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "updated": "2026-05-26",
+  "priorityTopics": [
+    {
+      "id": "TIA_V21_NEW_CPU_AND_SYNTAX",
+      "rank": 1,
+      "title": "TIA Portal V21 new CPU families and SCL/programming changes",
+      "focus": [
+        "new S7-1200 G2 and S7-1500 CPU behavior",
+        "new CPU firmware requirements",
+        "new or recommended data types and symbolic access",
+        "optimized block access and migration away from absolute addressing",
+        "SCL syntax and library instruction changes"
+      ],
+      "expectedArtifacts": [
+        "wiki comparison tables",
+        "SCL examples",
+        "needs-local-validation markers for compile/runtime behavior"
+      ]
+    },
+    {
+      "id": "TIA_CLI_NO_SCREENSHOT_AUTOMATION",
+      "rank": 2,
+      "title": "TIA Portal CLI and no-screenshot automation paths",
+      "focus": [
+        "Openness export/import",
+        "Version Control Interface export formats",
+        "SIMATIC SD export/import",
+        "Hardware Publication Tool command-line exports",
+        "structured input/output through XML, AML, YAML, SCL, and JS files"
+      ],
+      "expectedArtifacts": [
+        "PowerShell wrapper sketches",
+        "C# Openness bridge notes",
+        "input/output file contract",
+        "avoidance of screenshot-only workflows"
+      ]
+    },
+    {
+      "id": "S7200SMART_V3_V2_DEEP_DIFF",
+      "rank": 3,
+      "title": "S7-200 SMART V3 versus V2 programming differences",
+      "focus": [
+        "V3 system manual versus V2 behavior",
+        "FB block use and instance data",
+        "subroutine/function block calling conventions",
+        "syntax and instruction differences",
+        "migration traps for existing V2 projects"
+      ],
+      "expectedArtifacts": [
+        "V3/V2 difference matrix",
+        "FB block usage notes",
+        "migration checklist",
+        "needs-local-validation items for STEP 7-Micro/WIN SMART"
+      ]
+    }
+  ],
+  "officialSources": [
+    {
+      "id": "tia-v21-new-cpu-functions",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/programming-recommendations-s7-1200-s7-1500/the-new-s7-1200/1500-cpu-functions-and-programming-recommendations-at-a-glance-s7-1200-s7-1500",
+      "why": "Official V21 programming recommendations for new S7-1200/1500 CPU functions, symbolic access, optimized blocks, and data types."
+    },
+    {
+      "id": "tia-v21-openness-export-import",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-openness-api-for-automation-of-engineering-workflows/export/import",
+      "why": "Official V21 Openness export/import path for structured engineering input/output."
+    },
+    {
+      "id": "tia-v21-vci-export-formats",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/using-tia-portal-version-control-interface/settings-for-the-version-control-interface/setting-the-export-format/overview-of-export-formats",
+      "why": "Official VCI export format page, including SIMATIC SD export/import and file-based versioning."
+    },
+    {
+      "id": "tia-v21-hardware-publication-cli",
+      "url": "https://docs.tia.siemens.cloud/r/en-us/v21/hardware-publication-tool/exporting-attributes-via-command-line-commands",
+      "why": "Official command-line route for exporting hardware attributes without screenshots."
+    },
+    {
+      "id": "s7-200-smart-v3-system-manual",
+      "url": "https://support.industry.siemens.com/cs/attachments/109978364/S7-200_SMART_V3_system_manual_en-HS.pdf",
+      "why": "Official S7-200 SMART V3 system manual for V3 programming and FB behavior study."
+    }
+  ]
+}
