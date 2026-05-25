@@ -14,6 +14,9 @@ if (-not $env:NOTION_TOKEN) {
   throw "NOTION_TOKEN is not set."
 }
 
+$notionToken = ($env:NOTION_TOKEN -replace '[^\x20-\x7E]', '').Trim()
+$ParentPageId = ($ParentPageId -replace '[^\x20-\x7E]', '').Trim()
+
 if (-not $ParentPageId) {
   throw "NOTION_PARENT_PAGE_ID is not set."
 }
@@ -98,7 +101,7 @@ $body = @{
 } | ConvertTo-Json -Depth 20
 
 $headers = @{
-  Authorization = "Bearer $env:NOTION_TOKEN"
+  Authorization = "Bearer $notionToken"
   "Notion-Version" = "2022-06-28"
   "Content-Type" = "application/json"
 }
