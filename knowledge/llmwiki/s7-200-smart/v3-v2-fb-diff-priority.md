@@ -1,6 +1,6 @@
 # S7-200 SMART V3 versus V2 Deep-Diff Priority
 
-Updated: 2026-05-25 20:07:27 +00:00
+Updated: 2026-05-26 18:21:16 +00:00
 Keywords: S7200SMART_V3_V2_DIFF, S7200SMART_FB_USAGE
 
 ## Official Source Baseline
