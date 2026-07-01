@@ -1,6 +1,6 @@
 # TIA Portal Openness V21 Baseline
 
-Updated: 2026-06-30 18:12:00 +00:00
+Updated: 2026-07-01 18:10:34 +00:00
 Keyword: TIA_OPN_V21
 
 ## Source
