@@ -1,6 +1,6 @@
 # SCL Industrial Rules Baseline
 
-Updated: 2026-07-07 18:12:48 +00:00
+Updated: 2026-07-08 18:03:01 +00:00
 Keywords: SCL_CASE_OF, SCL_OPTIMIZED_ACCESS
 
 ## Digest
