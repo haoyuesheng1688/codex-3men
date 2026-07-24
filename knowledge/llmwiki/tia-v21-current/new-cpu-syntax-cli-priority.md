@@ -1,6 +1,6 @@
 # TIA V21 New CPU, Syntax, and No-Screenshot Automation Priority
 
-Updated: 2026-07-23 17:58:14 +00:00
+Updated: 2026-07-24 18:00:54 +00:00
 Keywords: TIA_V21_NEW_CPU, TIA_V21_NEW_SYNTAX, TIA_CLI_NO_SCREENSHOT, TIA_IO_AUTOMATION
 
 ## Official Source Baseline
