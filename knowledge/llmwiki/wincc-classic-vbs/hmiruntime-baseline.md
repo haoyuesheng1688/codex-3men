@@ -1,6 +1,6 @@
 # WinCC Classic VBS HMIRuntime Baseline
 
-Updated: 2026-08-15 17:37:12 +00:00
+Updated: 2026-08-16 17:37:06 +00:00
 Keyword: WINCC_CLASSIC_VBS_HMIRUNTIME
 
 ## Source
