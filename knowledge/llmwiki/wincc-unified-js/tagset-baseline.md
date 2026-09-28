@@ -1,6 +1,6 @@
 # WinCC Unified JavaScript TagSet Baseline
 
-Updated: 2026-09-27 17:33:13 +00:00
+Updated: 2026-09-28 17:35:45 +00:00
 Keyword: WINCC_UNIFIED_JS_TAGSET
 
 ## Source
